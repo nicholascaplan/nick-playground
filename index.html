@@ -85,7 +85,7 @@
         <!-- TOP HEADER -->
         <div class="flex justify-between items-center border-b border-blue-900/40 pb-3 mb-2 flex-shrink-0">
             <span id="slide-category-header" class="text-xs tracking-widest font-grotesk text-cyber-yellow font-bold uppercase"></span>
-            <span class="text-xs text-slate-400 font-mono font-bold">Devoxx UK 2026 • EM Leadership Briefing</span>
+            <span class="text-xs text-slate-400 font-mono font-bold">Devoxx UK 2026 • EM Leadership Briefing • 22/07/26</span>
         </div>
 
         <!-- DYNAMIC CONTENT BLOCK -->
@@ -99,19 +99,18 @@
         </div>
 
         <!-- BOTTOM FOOTER -->
-        <!-- Symmetrical 3-column split footer to resolve screenshot layout overlap issues -->
         <div class="grid grid-cols-3 items-center pt-3 mt-1 flex-shrink-0 border-t border-blue-900/20">
             <!-- Left Side: Context Details -->
             <div class="text-left">
                 <span id="slide-footer-left" class="font-mono text-[11px] md:text-xs text-slate-400"></span>
             </div>
 
-            <!-- Center Side: Elegant Speaker Badge -->
-            <div class="flex justify-center items-center gap-2">
+            <!-- Center Side: Speaker Badge -->
+            <div class="flex justify-center items-center gap-3">
                 <img src="https://ca.slack-edge.com/E011GCXCPMY-U05U7AW717C-b1a0ea04cda2-512"
                      alt="Nick Caplan"
-                     class="w-6 h-6 rounded-full border border-cyber-yellow/40 object-cover shadow-md"
-                     onerror="this.onerror=null; this.src='https://placehold.co/24x24/1d4ed8/facc15?text=NC'">
+                     class="w-9 h-9 rounded-full border border-cyber-yellow/40 object-cover shadow-md"
+                     onerror="this.onerror=null; this.src='https://placehold.co/36x36/1d4ed8/facc15?text=NC'">
                 <span class="text-[10px] md:text-xs text-slate-400 font-mono font-bold tracking-wide">Nick Caplan</span>
             </div>
 
@@ -129,39 +128,39 @@
             {
                 // SLIDE 1: THE THESIS
                 layout: 'thesis',
-                category: 'Keynote Briefing 🚀',
+                category: 'Keynote Briefing',
                 title: 'Designing for Safe Coordination',
                 subtitle: 'Engineering Leadership Under System Uncertainty',
-                thesisStatement: 'As AI increases the speed and reach of engineering decisions, leadership must make authority, safety limits, and feedback loops explicit.',
+                thesisStatement: 'When automation or scale increases the consequences of local decisions, leaders respond by making authority, constraints and feedback loops explicit.',
                 bullet1: '<strong>AI Delivery:</strong> Managing the compression of routine implementation loops in code flow.',
                 bullet2: '<strong>Agent Security:</strong> Enforcing strict, deterministic boundaries around tool-calling agents.',
-                bullet3: '<strong>Operational Empathy:</strong> Navigating loose-authority environments to protect focus and alignment.',
+                bullet3: '<strong>Operational Coordination:</strong> Navigating loose-authority environments to protect focus and alignment.',
                 footerLeft: 'Central Leadership Thesis',
                 footerRight: 'May 2026'
             },
             {
                 // SLIDE 2: THE SHIFT (AI & DELIVERY)
                 layout: 'split-shift',
-                category: '01. Changing Workflows 💻',
+                category: '01. Changing Workflows',
                 title: 'The Shift: Re-Engineering Code Flow',
                 subtitle: 'Evaluating delayed branch reviews against small-batch validation models.',
-                col1Title: 'Delayed Branch reviews',
-                col1Text: '<strong>Pipeline Friction:</strong> Standard pipelines relying on long-lived branches build inventory silos, create validation bottlenecks, and slow down release cycles.',
+                col1Title: 'Delayed Branch Reviews',
+                col1Text: '<strong>Pipeline Friction:</strong> Standard pipelines relying on long-lived branches build inventory silos, create validation bottlenecks and slow down release cycles.',
                 col2Title: 'Small-Batch Integration',
                 col2Items: [
-                    '⚡ <strong>Boilerplate Compression:</strong> AI-native development compresses routine syntax implementation loops.',
-                    '🔧 <strong>Accountable Release:</strong> Focus shifts heavily from raw typing to specifications, architectural integration, and validation decisions.'
+                    '<strong>Boilerplate Compression:</strong> AI-native development compresses routine syntax implementation loops.',
+                    '<strong>Accountable Release:</strong> Focus shifts heavily from raw typing to specifications, architectural integration and validation decisions.'
                 ],
                 footerLeft: 'AI-Native Operating Models'
             },
             {
                 // SLIDE 3: THE QUALIFICATION (WHERE TRUNK WORKS & FAILS)
                 layout: 'two-column-qualification',
-                category: '01. Changing Workflows ⚙️',
+                category: '01. Changing Workflows',
                 title: 'Qualifications: Safeguarding Accelerated Delivery',
                 subtitle: 'Frequent integration depends strictly on resilient confidence-oriented controls.',
                 col1Title: 'Confidence-Oriented Controls',
-                col1Text: 'Small-batch integration is not a structural shortcut. It demands highly responsive confidence frameworks: fast and reliable test suites, high-fidelity production observability, strict feature-flag regimes, and proven rollback paths.',
+                col1Text: 'Small-batch integration is not a structural shortcut. It demands highly responsive confidence frameworks: fast and reliable test suites, high-fidelity production observability, strict feature-flag regimes and proven rollback paths.',
                 col2Title: 'Defending Engineering Capacity',
                 col2Text: '<strong>Manage Technical Debt:</strong> Without systematic boundaries, automated refactoring loops and legacy maintenance can silently consume your squad’s entire planning and iteration bandwidth.',
                 footerLeft: 'Delivery Safeguards'
@@ -169,26 +168,26 @@
             {
                 // SLIDE 4: THE THREAT (PROMPT INJECTION)
                 layout: 'split-threat',
-                category: '02. Trust Boundaries 🛡️',
+                category: '02. Trust Boundaries',
                 title: 'The Threat: Prompt Injection is a System Defect',
                 subtitle: 'Understanding the unique nature of prompt-driven security vulnerabilities.',
                 col1Title: 'Instruction-Data Collapse',
                 col1Text: 'Traditional software separates execution instructions from untrusted data payloads. LLMs collapse both into a single context window, allowing external data to hijack execution flow.',
                 col2Title: 'Deterministic Boundaries',
                 col2Items: [
-                    '🚫 <strong>Prompt Boundaries Fail:</strong> LLMs cannot reliably enforce a security boundary from prompt instruction text alone.',
-                    '🛡️ <strong>Input Treatment:</strong> Treat untrusted documents, customer tickets, emails, and tool outputs strictly as data, never as execution authority.'
+                    '<strong>Prompt Boundaries Fail:</strong> LLMs cannot reliably enforce a security boundary from prompt instruction text alone.',
+                    '<strong>Input Treatment:</strong> Treat untrusted documents, customer tickets, emails and tool outputs strictly as data, never as execution authority.'
                 ],
                 footerLeft: 'Security Trust Boundaries'
             },
             {
                 // SLIDE 5: THE ATTACK PATH (INTERACTIVE DIAGRAM)
                 layout: 'diagram-path',
-                category: '02. Trust Boundaries 🧩',
+                category: '02. Trust Boundaries',
                 title: 'The Attack Path: MCP Agent Exploit',
                 subtitle: 'A concrete scenario showing how missing boundaries expose an autonomous workspace.',
                 steps: [
-                    { label: '1. Input Pipeline', text: 'Untrusted content (e.g. a shared PDF) enters context without sanitization.' },
+                    { label: '1. Input Pipeline', text: 'Untrusted content enters context window without sanitisation.' },
                     { label: '2. Model Processing', text: 'LLM collapses instruction and untrusted data, proposing a tool-call action.' },
                     { label: '3. Policy Validation', text: 'Orchestrator accepts the action blindly without schema verification.' },
                     { label: '4. Privilege Execution', text: 'The tool executes with excessive privileges, violating least-privilege standards.' }
@@ -198,7 +197,7 @@
             {
                 // SLIDE 6: THE CONTROLS (SECURITY LAYERS)
                 layout: 'controls-stack',
-                category: '02. Trust Boundaries 🏗️',
+                category: '02. Trust Boundaries',
                 title: 'Deterministic Controls: Request Lifecycle Stack',
                 subtitle: 'Moving security enforcement entirely outside the model\'s active memory.',
                 layers: [
@@ -212,61 +211,61 @@
             {
                 // SLIDE 7: THE LEADERSHIP ROLE
                 layout: 'two-column-role',
-                category: '03. Engineering Governance 🧠',
+                category: '03. Engineering Governance',
                 title: 'The Leadership Role: Secure Path Provisioning',
                 subtitle: 'EMs must actively design and direct the human-machine collaboration system.',
                 col1Title: 'Securing the Golden Path',
                 col1Text: 'If corporate pipelines are too restrictive, teams will bypass them with consumer web workarounds. EMs must provision secure, highly usable sanctioned paths quickly enough to eliminate shadow workarounds.',
                 col2Title: 'Managing Cognitive Load',
-                col2Text: 'Automation scales output, not foresight. EMs are responsible for setting boundaries, protecting squad cognitive capacity, and acting as consultative system advisors.',
+                col2Text: 'Automation scales output, not foresight. EMs are responsible for setting boundaries, protecting squad cognitive capacity and acting as consultative system advisors.',
                 footerLeft: 'Engineering Governance'
             },
             {
                 // SLIDE 8: THE FLOOR (OPERATIONAL OBSERVATIONS)
                 layout: 'metrics',
-                category: '04. Operational Empathy 🛠️',
+                category: '04. Operational Coordination',
                 title: 'Field Observations: Coordination Under Constraint',
                 subtitle: 'Personal field observations from Devoxx UK 2026 operations.',
                 mainMetric: '20k+',
                 metricLabel: 'Steps Logged Daily',
                 pillars: [
                     {
-                        title: 'Loose-Authority Coordination',
-                        reality: 'Coordinating physical room and layout paths dynamically across physical zones using lightweight trust-based communication channels.',
-                        parallel: 'When formal systems fail during critical incident responses, engineering coordination relies on pre-established trust and direct, real-time channels.'
+                        title: 'The Friction of Reality',
+                        reality: 'Standing on hard concrete floors for 10 hours straight, managing lecture rooms hitting absolute fire capacity, and feeling the physical tension of a crowd of 300 tired developers who just want to find a seat.',
+                        parallel: 'Perfect software pipelines look flawless on an architecture diagram, but production systems are run by stressed, tired humans. If your engineering workflows don\'t respect human friction and cognitive limits, they will fall apart under load.'
                     },
                     {
-                        title: 'Rapid Feedback Loops',
-                        reality: 'Observing physical congestion patterns and rapidly coordinating redirects before bottlenecks blocked access paths.',
-                        parallel: 'Moving beyond weekly post-mortems and lagging metrics to build immediate, real-time team feedback loops and direct telemetry.'
+                        title: 'Zero-Authority Influence',
+                        reality: 'Having zero formal organisational authority over speakers or attendees, but still needing to guide presenter schedules, manage line flow and solve logistical problems purely through active listening and trust.',
+                        parallel: 'In modern, matrixed engineering organisations, formal reporting hierarchy is a lagging fallback. The critical alignment your team needs during a major production incident relies entirely on pre-built trust and direct lines of communication, not org charts.'
                     },
                     {
-                        title: 'Influence Without Hierarchy',
-                        reality: 'Ensuring session schedules and speaker alignment across hundreds of presenters without formal organizational authority.',
-                        parallel: 'Securing structural alignment and architectural compliance across matrixed engineering teams using shared goals instead of mandates.'
+                        title: 'Hallway Telemetry',
+                        reality: 'Watching hallway bottlenecks form in real time, communicating on quick, lightweight radio loops with other floor volunteers and making split-second local routing decisions before the congestion stalled out.',
+                        parallel: 'Lagging dashboard metrics and slow post-mortems cannot save active systems. Stressed engineering teams need immediate, real-time feedback loops and direct local decision authority to self-correct before failures cascade.'
                     }
                 ],
                 footerLeft: 'Operational Stewardship'
             },
             {
-                // SLIDE 9: THE ACTION PLAN
+                // SLIDE 9: ADOPTION READINESS ADVICE
                 layout: 'action-plan',
-                category: '05. Strategic Action Plan 🎯',
-                title: 'First 30 Days: Prioritized Action Plan',
-                subtitle: 'Translating strategic insights into concrete, measurable security actions.',
+                category: '05. Adoption Readiness',
+                title: 'Adoption Advice: Preparing for Agent Workflows',
+                subtitle: 'Establishing deterministic guardrails before introducing autonomous tool execution.',
                 actions: [
-                    '<strong>Week 1: Inventory & Assess:</strong> Map high-risk agent/tool integration pathways. <em>Output: Risk-ranked inventory of integrations.</em>',
-                    '<strong>Week 2: Document Capabilities:</strong> Formulate and lock down tight schema boundaries for state-changing tool inputs. <em>Output: Documented capability policies.</em>',
-                    '<strong>Week 3: Test & Verify:</strong> Execute controlled indirect prompt injection tests against one high-impact workflow. <em>Output: Validated mitigation records.</em>'
+                    '<strong>Require Outer-Loop Control Architecture:</strong> Mandate deterministic schema validation and user session binding before any agent tool integration goes live. <em>Prerequisite: Structural boundary design.</em>',
+                    '<strong>Default to Read-Only Tool Capabilities:</strong> Limit initial agent tools to tightly scoped read actions. Require explicit human confirmation for any write or state-changing call. <em>Prerequisite: Least-privilege capabilities.</em>',
+                    '<strong>Mandate Tamper-Evident Session Auditing:</strong> Ensure every tool invocation emits structured, tamper-evident audit logs linked to human identity before production deployment. <em>Prerequisite: Traceable accountability.</em>'
                 ],
-                footerLeft: 'First 30 Days Roadmap'
+                footerLeft: 'Agent Adoption Prerequisite Framework'
             },
             {
                 // SLIDE 10: REFERENCES & RESOURCES
                 layout: 'references',
-                category: 'References & Sources 📚',
+                category: 'References & Sources',
                 title: 'Devoxx UK 2026: Verifiable Reference Index',
-                subtitle: 'Expert talks, formal research, and industry security benchmarks.',
+                subtitle: 'Expert talks, formal research and industry security benchmarks.',
                 sources: [
                     {
                         author: 'Sander Hoogendoorn',
@@ -300,10 +299,30 @@
                 footerLeft: 'Attribution & Further Reading'
             },
             {
-                // SLIDE 11: APPENDIX: HOW THIS SLIDE DECK WORKS
+                // SLIDE 11: CONCLUDING DECISION SLIDE
+                layout: 'close-action',
+                category: 'The Leadership Mandate',
+                title: 'Your Next Step: Make Authority Explicit',
+                subtitle: 'A single, high-impact commitment for your engineering organisation.',
+                mandateStatement: 'Do not delegate security to a prompt.',
+                bullet1: '<strong>Audit:</strong> Identify one agent-enabled workflow in your active team pipeline.',
+                bullet2: '<strong>Enforce:</strong> Prove that its authority is explicit, least-privilege and validated outside the model.',
+                bullet3: '<strong>Log:</strong> Guarantee that all tool executions generate tamper-evident audit logs.',
+                footerLeft: 'Audience Commitment'
+            },
+            {
+                // SLIDE 12: APPENDIX: ABOUT DEVOXX UK 2026
+                layout: 'devoxx-context',
+                category: 'Appendix: Event Context',
+                title: 'About Devoxx UK 2026',
+                subtitle: 'The UK\'s premier practitioner conference for developer & engineering leadership.',
+                footerLeft: 'Event Overview • Ground Truth'
+            },
+            {
+                // SLIDE 13: APPENDIX: HOW THIS SLIDE DECK WORKS
                 layout: 'appendix-engine',
-                category: 'Appendix: Under the Hood 💻',
-                title: 'Appendix: Architecture of this Slide Deck',
+                category: 'Appendix: Under the Hood',
+                title: 'Architecture of this Slide Deck',
                 subtitle: 'An interactive inspect panel demonstrating why custom HTML single-file SPAs outperform legacy presentations.',
                 systems: [
                     {
@@ -318,16 +337,16 @@
                     },
                     {
                         title: 'Multi-Modal Input Router',
-                        desc: 'Unified listener map routing arrow keys, tactile mobile swipes, and timeline coordinate clicks.',
+                        desc: 'Unified listener map routing arrow keys, tactile mobile swipes and timeline coordinate clicks.',
                         advantage: 'Guarantees complete platform parity and flawless response on any projection screen.'
                     }
                 ],
                 footerLeft: 'Technical Appendix • Architecture Report'
             },
             {
-                // SLIDE 12: APPENDIX: HOSTING FLOW
+                // SLIDE 14: APPENDIX: HOSTING FLOW
                 layout: 'hosting-flow',
-                category: 'Appendix: Hosting Architecture 🌐',
+                category: 'Appendix: Hosting Architecture',
                 title: 'How This Presentation Is Hosted',
                 subtitle: 'A single static HTML file deployed automatically with GitHub Pages',
                 footerLeft: 'Static Hosting • Automated Deployment'
@@ -335,7 +354,7 @@
         ];
 
         let currentSlideIndex = 0;
-        let activeTransitionTimeout = null; // Active timeout pointer for instant cancellation
+        let activeTransitionTimeout = null;
 
         // Active State trackers for dynamic slides
         let activeFloorInsight = 0;
@@ -347,18 +366,15 @@
             const slide = slidesContent[index];
             const container = document.getElementById('slide-container');
 
-            // If it's an internal update, skip the transition animations
             if (isInternalUpdate) {
                 compileAndInject(slide, container, index);
                 return;
             }
 
-            // INSTANTLY cancel any pending fade timeouts from rapid clicking
             if (activeTransitionTimeout) {
                 clearTimeout(activeTransitionTimeout);
             }
 
-            // Immediately paint persistent metadata so navigation feedback is instant
             document.getElementById('slide-category-header').innerText = slide.category;
             document.getElementById('slide-footer-left').innerText = slide.footerLeft || '';
             document.getElementById('slide-footer-right').innerText = `Slide ${index + 1} of ${slidesContent.length}`;
@@ -366,11 +382,9 @@
             const progressPercentage = ((index + 1) / slidesContent.length) * 100;
             document.getElementById('progress-indicator').style.width = `${progressPercentage}%`;
 
-            // Trigger a quick 120ms fade-out of the old content
             container.style.transition = 'opacity 0.12s ease-out';
             container.style.opacity = '0';
 
-            // Schedule the data swap and quick fade-in
             activeTransitionTimeout = setTimeout(() => {
                 compileAndInject(slide, container, index);
                 container.style.transition = 'opacity 0.15s ease-in';
@@ -395,13 +409,13 @@
                 html += `
                     <div class="flex-grow flex flex-col justify-center items-start space-y-6">
                         <div class="flex items-center gap-3 bg-blue-900/40 text-cyber-yellow border border-blue-500/30 px-4 py-1.5 rounded-full text-xs font-bold font-grotesk tracking-wide uppercase">
-                            <span><i class="fa-solid fa-compass mr-2 animate-pulse"></i>Executive Briefing</span>
+                            <span><i class="fa-solid fa-compass mr-2"></i>Executive Briefing • 22/07/26</span>
                         </div>
                         <h1 class="text-3xl md:text-5xl font-black tracking-tight font-grotesk leading-tight text-white">
                             ${slide.title}
                         </h1>
                         <p class="text-cyber-yellow font-grotesk font-bold text-lg md:text-2xl border-l-4 border-cyber-yellow pl-4 leading-relaxed max-w-4xl">
-                            "${slide.thesisStatement}"
+                            ${slide.thesisStatement}
                         </p>
                         <div class="space-y-3.5 pt-4 text-slate-300 text-sm md:text-base font-medium max-w-3xl">
                             <div class="flex items-start gap-3"><span class="text-cyber-yellow font-bold">▪</span><p>${slide.bullet1}</p></div>
@@ -410,11 +424,70 @@
                         </div>
                     </div>
                 `;
+            } else if (slide.layout === 'devoxx-context') {
+                html += `
+                    <div class="flex-grow flex flex-col justify-center py-1 font-jakarta">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch" onclick="event.stopPropagation()">
+
+                            <!-- Card 1: Conference Scale -->
+                            <div class="bg-slate-900/50 border border-blue-900/60 p-5 rounded-xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between border-b border-blue-900/40 pb-2">
+                                        <span class="text-xs font-mono font-bold text-cyber-yellow uppercase">Scale & Reach</span>
+                                        <i class="fa-solid fa-users text-blue-400 text-sm"></i>
+                                    </div>
+                                    <h3 class="font-grotesk font-bold text-lg text-white">2,700+ Attendees</h3>
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Annual practitioner conference held at the Business Design Centre (BDC) in London, drawing delegates from 20+ countries.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-t border-blue-900/30 text-[10px] font-mono text-slate-400">
+                                    BDC Islington • London
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Technical Scope -->
+                            <div class="bg-slate-900/50 border border-blue-900/60 p-5 rounded-xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between border-b border-blue-900/40 pb-2">
+                                        <span class="text-xs font-mono font-bold text-cyber-yellow uppercase">100+ Sessions</span>
+                                        <i class="fa-solid fa-layer-group text-blue-400 text-sm"></i>
+                                    </div>
+                                    <h3 class="font-grotesk font-bold text-lg text-white">9 Specialized Tracks</h3>
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Spanning Java, Architecture, Build & Deploy, AI & Data, Security and Engineering People & Culture.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-t border-blue-900/30 text-[10px] font-mono text-slate-400">
+                                    Hands-on Labs & Keynotes
+                                </div>
+                            </div>
+
+                            <!-- Card 3: Strategic Value for EMs -->
+                            <div class="bg-slate-900/50 border border-blue-900/60 p-5 rounded-xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between border-b border-blue-900/40 pb-2">
+                                        <span class="text-xs font-mono font-bold text-cyber-yellow uppercase">EM Value</span>
+                                        <i class="fa-solid fa-chart-line text-blue-400 text-sm"></i>
+                                    </div>
+                                    <h3 class="font-grotesk font-bold text-lg text-white">Practitioner Telemetry</h3>
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Provides engineering leaders with an unvarnished ground-truth on real-world AI delivery workflows, agent security threats and team dynamics.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-t border-blue-900/30 text-[10px] font-mono text-slate-400">
+                                    Community-Driven Insights
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
             } else if (slide.layout === 'close-action') {
                 html += `
                     <div class="flex-grow flex flex-col justify-center items-start space-y-6">
                         <div class="flex items-center gap-3 bg-blue-900/40 text-cyber-yellow border border-blue-500/30 px-4 py-1.5 rounded-full text-xs font-bold font-grotesk tracking-wide uppercase">
-                            <span><i class="fa-solid fa-circle-check mr-2 animate-pulse"></i>The Leadership Mandate</span>
+                            <span><i class="fa-solid fa-circle-check mr-2"></i>The Leadership Mandate</span>
                         </div>
                         <h1 class="text-3xl md:text-5xl font-black tracking-tight font-grotesk leading-tight text-white">
                             ${slide.title}
@@ -455,12 +528,11 @@
                                 `).join('')}
                             </div>
 
-                            <!-- Right Column: Interactive Briefing with unified height configuration and strict overflow-hidden -->
+                            <!-- Right Column: Interactive Briefing -->
                             <div class="lg:col-span-6 bg-slate-950/60 border border-blue-900 p-5 rounded-2xl flex flex-col justify-between shadow-2xl h-[290px] overflow-hidden">
                                 <div class="space-y-3">
                                     <div class="flex items-center justify-between gap-2 border-b border-blue-900/30 pb-2">
                                         <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono text-cyber-yellow bg-blue-950/50 border border-blue-500/20">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                                             Field Incident Command
                                         </span>
                                         <div class="text-right flex items-baseline gap-1">
@@ -470,17 +542,17 @@
                                     </div>
 
                                     <div class="space-y-1">
-                                        <h4 class="text-[10px] uppercase font-mono tracking-wider text-slate-400">Devoxx Floor Observation:</h4>
+                                        <h4 class="text-[10px] uppercase font-mono tracking-wider text-slate-400">Ground Truth:</h4>
                                         <p class="text-slate-200 text-xs md:text-sm leading-relaxed">${slide.pillars[activeFloorInsight].reality}</p>
                                     </div>
 
                                     <div class="space-y-1 pt-1">
-                                        <h4 class="text-[10px] uppercase font-mono tracking-wider text-cyber-yellow">EM Leadership Takeaway:</h4>
+                                        <h4 class="text-[10px] uppercase font-mono tracking-wider text-cyber-yellow">The EM Epiphany:</h4>
                                         <p class="text-slate-300 text-xs md:text-sm leading-relaxed border-l-2 border-cyber-yellow pl-2.5">${slide.pillars[activeFloorInsight].parallel}</p>
                                     </div>
                                 </div>
                                 <div class="pt-2 border-t border-blue-900/30 flex justify-between items-center text-[10px] text-slate-400 font-mono">
-                                    <span>Scope: Operational Alignment</span>
+                                    <span>Scope: Operational Coordination</span>
                                     <span class="text-cyber-yellow">Interactive Briefing</span>
                                 </div>
                             </div>
@@ -507,19 +579,21 @@
                                         <h3 class="text-cyber-yellow font-bold text-sm md:text-base mb-2 font-grotesk uppercase tracking-wider">${slide.col1Title}</h3>
                                         <p class="text-slate-300 text-xs md:text-sm leading-relaxed">${slide.col1Text}</p>
                                     </div>
-                                    <div class="pt-2 border-t border-blue-900/20 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
-                                        <span class="text-[9px] text-red-400 uppercase tracking-widest font-mono">Workflow Stagnation</span>
+                                    <div class="pt-2 border-t border-blue-900/20 flex items-center">
+                                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[9px] font-mono font-bold uppercase tracking-wider bg-red-950/50 border border-red-500/30 text-red-400">
+                                            Workflow Stagnation
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-blue-900/50 flex flex-col justify-between h-[200px] overflow-hidden">
                                     <div>
                                         <h3 class="text-cyber-yellow font-bold text-sm md:text-base mb-2 font-grotesk uppercase tracking-wider">The Cost of Latency</h3>
-                                        <p class="text-slate-300 text-xs md:text-sm leading-relaxed"><strong>Asynchronous queues</strong> delay value delivery. Merging long-lived branches after isolation multiplies validation blockages.</p>
+                                        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">Asynchronous queues delay value delivery. Merging long-lived branches after isolation multiplies validation bottlenecks.</p>
                                     </div>
-                                    <div class="pt-2 border-t border-blue-900/20 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
-                                        <span class="text-[9px] text-red-400 uppercase tracking-widest font-mono">Capacity Drag</span>
+                                    <div class="pt-2 border-t border-blue-900/20 flex items-center">
+                                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[9px] font-mono font-bold uppercase tracking-wider bg-red-950/50 border border-red-500/30 text-red-400">
+                                            Capacity Drag
+                                        </span>
                                     </div>
                                 </div>
                             ` : `
@@ -535,15 +609,21 @@
                                             `).join('')}
                                         </ul>
                                     </div>
+                                    <div class="pt-2 border-t border-blue-900/20 flex items-center">
+                                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[9px] font-mono font-bold uppercase tracking-wider bg-green-950/50 border border-green-500/30 text-green-400">
+                                            Rapid Integration
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-blue-900/50 flex flex-col justify-between h-[200px] overflow-hidden">
                                     <div>
                                         <h3 class="text-cyber-yellow font-bold text-sm md:text-base mb-2 font-grotesk uppercase tracking-wider">The Target Paradigm</h3>
-                                        <p class="text-slate-300 text-xs md:text-sm leading-relaxed"><strong>Continuous Validation</strong><br>Integrating code continuously, leveraging short-interval reviews paired to risk levels, and keeping releases highly automated.</p>
+                                        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">Continuous Validation: Integrating code continuously, leveraging short-interval reviews paired to risk levels, and keeping releases highly automated.</p>
                                     </div>
-                                    <div class="pt-2 border-t border-blue-900/20 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                                        <span class="text-[9px] text-green-400 uppercase tracking-widest font-mono">Continuous Delivery</span>
+                                    <div class="pt-2 border-t border-blue-900/20 flex items-center">
+                                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[9px] font-mono font-bold uppercase tracking-wider bg-green-950/50 border border-green-500/30 text-green-400">
+                                            Continuous Delivery
+                                        </span>
                                     </div>
                                 </div>
                             `}
@@ -574,9 +654,10 @@
                                     <h3 class="text-cyber-yellow font-bold text-sm md:text-base mb-3 font-grotesk uppercase tracking-wider">${slide.col1Title}</h3>
                                     <p class="text-slate-300 text-xs md:text-sm leading-relaxed">${slide.col1Text}</p>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-blue-900/20 flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                                    <span class="text-[9px] text-red-400 uppercase tracking-widest font-mono font-bold">Inherent Flaw</span>
+                                <div class="mt-4 pt-3 border-t border-blue-900/20 flex items-center">
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[9px] font-mono font-bold uppercase tracking-wider bg-red-950/50 border border-red-500/30 text-red-400">
+                                        Inherent Flaw
+                                    </span>
                                 </div>
                             </div>
                             <div class="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-blue-900/50 flex flex-col justify-between">
@@ -591,9 +672,10 @@
                                         `).join('')}
                                     </ul>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-blue-900/20 flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyber-yellow animate-pulse"></span>
-                                    <span class="text-[9px] text-cyber-yellow uppercase tracking-widest font-mono font-bold">Boundary Defense</span>
+                                <div class="mt-4 pt-3 border-t border-blue-900/20 flex items-center">
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[9px] font-mono font-bold uppercase tracking-wider bg-blue-950/50 border border-blue-500/30 text-cyber-yellow">
+                                        Boundary Defence
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -617,8 +699,8 @@
                             `).join('')}
                         </div>
                         <div id="attack-diagram-explanation" class="mt-5 p-4 rounded-xl bg-blue-950/40 border-2 border-blue-500/30 text-sm md:text-base text-slate-200 text-center font-semibold shadow-inner leading-relaxed">
-                            <i class="fa-solid fa-circle-info text-cyber-yellow mr-2 animate-pulse"></i>
-                            Interactive Threat Flow: Tap on any exploit step above to inspect specific mitigation strategies and trust progression.
+                            <i class="fa-solid fa-circle-info text-cyber-yellow mr-2"></i>
+                            Exploit Analysis Panel: Inspecting the breakdown of deterministic security controls at each stage of the attack path.
                         </div>
                     </div>
                 `;
@@ -639,21 +721,15 @@
                                 `).join('')}
                             </div>
 
-                            <!-- Dynamic Context Inspector Panel with unified height configuration and strict overflow-hidden -->
-                            <div class="lg:col-span-6 bg-slate-950/60 border border-blue-900 p-5 rounded-2xl flex flex-col justify-between shadow-2xl h-[290px] overflow-hidden">
-                                <div class="space-y-4">
-                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold font-mono text-cyber-yellow bg-blue-950/50 border border-blue-500/20">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                                        Active Policy Analyzer
-                                    </span>
-                                    <div>
-                                        <h3 class="text-white font-bold text-lg md:text-xl font-grotesk mb-1">${slide.layers[activeControlLevel].level}</h3>
-                                        <p id="control-active-description" class="text-slate-300 text-sm md:text-base leading-relaxed">${slide.layers[activeControlLevel].text}</p>
-                                    </div>
+                            <!-- Dynamic Context Inspector Panel -->
+                            <div class="lg:col-span-6 bg-slate-950/60 border border-blue-900 p-6 rounded-2xl flex flex-col justify-between shadow-2xl h-[290px] overflow-hidden">
+                                <div class="space-y-3">
+                                    <h3 class="text-white font-bold text-lg md:text-xl font-grotesk border-b border-blue-900/40 pb-3">${slide.layers[activeControlLevel].level}</h3>
+                                    <p id="control-active-description" class="text-slate-300 text-sm md:text-base leading-relaxed pt-1">${slide.layers[activeControlLevel].text}</p>
                                 </div>
-                                <div class="pt-4 border-t border-blue-900/30 flex justify-between items-center text-xs text-slate-400 font-mono">
-                                    <span>Defense Scope: Active Validation</span>
-                                    <span class="text-cyber-yellow">Secure Standard</span>
+                                <div class="pt-3 border-t border-blue-900/30 flex justify-between items-center text-xs text-slate-400 font-mono">
+                                    <span>Defence Scope: Outer-Loop Enforcement</span>
+                                    <span class="text-cyber-yellow font-bold">Deterministic Policy</span>
                                 </div>
                             </div>
                         </div>
@@ -688,7 +764,6 @@
                     </div>
                 `;
             } else if (slide.layout === 'references') {
-                // FIXED LAYOUT FOR CARD: Websites placed cleanly in the top-right corner of each card. Devoxx UK removed. Quotes around titles removed.
                 html += `
                     <div class="flex-grow flex flex-col justify-center py-1">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch font-jakarta" onclick="event.stopPropagation()">
@@ -713,7 +788,6 @@
                     </div>
                 `;
             } else if (slide.layout === 'appendix-engine') {
-                // RENDER UNDER THE HOOD SLIDE EXACTLY MATCHING SCREENSHOT 2026-07-20 AT 21.59.52.JPG
                 html += `
                     <div class="flex-grow flex flex-col justify-center py-1">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
@@ -730,12 +804,12 @@
                                 `).join('')}
                             </div>
 
-                            <!-- Right Column: Interactive Console with unified height configuration and strict overflow-hidden -->
+                            <!-- Right Column: Interactive Console -->
                             <div class="lg:col-span-6 bg-slate-950/60 border border-blue-900 p-5 rounded-2xl flex flex-col justify-between shadow-2xl font-mono h-[290px] overflow-hidden">
                                 <div class="space-y-4">
                                     <div class="flex items-center justify-between border-b border-blue-900/40 pb-3">
                                         <span class="inline-flex items-center gap-1.5 text-xs font-bold text-green-400 bg-green-950/40 border border-green-500/20 px-2.5 py-1 rounded-md">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                            <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
                                             Deck Performance Stats
                                         </span>
                                         <div class="text-[10px] text-slate-400">
@@ -763,12 +837,10 @@
                     </div>
                 `;
             } else if (slide.layout === 'hosting-flow') {
-                // FIXED LAYOUT RESOLVING SCREENSHOT 2026-07-20 AT 22.02.07.PNG
-                // INLINE FLOW: Standardizing vertically connected nodes with elegant flex spacing to prevent absolute label overlaps on Repositories
                 html += `
                     <div class="flex-grow flex flex-col justify-center py-1">
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-                            <!-- Left Column: Inline Connected vertical nodes with zero overlapping masks -->
+                            <!-- Left Column: Inline Connected vertical nodes -->
                             <div class="lg:col-span-7 flex flex-col justify-between h-full space-y-1">
 
                                 <!-- Step 1 -->
@@ -781,9 +853,9 @@
                                     </div>
                                 </div>
 
-                                <!-- Pipeline Node Step Connector 1 -->
+                                <!-- Step Connector 1 -->
                                 <div class="flex items-center gap-2 pl-7 text-cyber-yellow text-[10px] font-mono uppercase tracking-wider">
-                                    <i class="fa-solid fa-arrow-down animate-bounce text-[9px]"></i>
+                                    <i class="fa-solid fa-arrow-down text-[9px]"></i>
                                     <span>push to main</span>
                                 </div>
 
@@ -793,13 +865,13 @@
                                     <div>
                                         <h4 class="font-grotesk font-bold text-sm text-white">GitHub Actions</h4>
                                         <p class="text-slate-300 text-xs leading-normal">Checks out the repository and uploads the repository root.</p>
-                                        <p class="text-slate-400 text-[10px] mt-0.5">Deploys the Pages artifact</p>
+                                        <p class="text-slate-400 text-[10px] mt-0.5">Deploys the Pages artefact</p>
                                     </div>
                                 </div>
 
-                                <!-- Pipeline Node Step Connector 2 -->
+                                <!-- Step Connector 2 -->
                                 <div class="flex items-center gap-2 pl-7 text-cyber-yellow text-[10px] font-mono uppercase tracking-wider">
-                                    <i class="fa-solid fa-arrow-down animate-bounce text-[9px]"></i>
+                                    <i class="fa-solid fa-arrow-down text-[9px]"></i>
                                     <span>HTTPS deployment</span>
                                 </div>
 
@@ -817,25 +889,36 @@
 
                             <!-- Right Column: Featured Live Site Callout Card -->
                             <div class="lg:col-span-5 flex flex-col justify-between h-full" onclick="event.stopPropagation()">
-                                <div class="cyber-card bg-slate-950 p-6 rounded-2xl flex flex-col justify-between h-full border-2 border-cyber-blue shadow-lg">
-                                    <div class="space-y-5">
-                                        <div class="flex items-center justify-between border-b border-blue-900/40 pb-3">
-                                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold font-mono text-green-400 bg-green-950/40 border border-green-500/20">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                                <div class="cyber-card bg-slate-950 p-4 rounded-2xl flex flex-col justify-between h-full border-2 border-cyber-blue shadow-lg">
+                                    <div class="space-y-3">
+                                        <div class="flex items-center justify-between border-b border-blue-900/40 pb-2.5">
+                                            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono text-green-400 bg-green-950/40 border border-green-500/20">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
                                                 LIVE GitHub Pages
                                             </span>
                                             <span class="text-[10px] text-slate-400 font-mono uppercase">SSL Active</span>
                                         </div>
 
-                                        <div class="space-y-2 pt-2">
-                                            <h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 font-bold">Deployment URL:</h4>
-                                            <a href="https://nicholascaplan.github.io/nick-playground/" target="_blank" rel="noopener noreferrer" class="block font-grotesk font-bold text-cyber-yellow text-lg md:text-xl break-all hover:underline leading-relaxed select-text cursor-pointer">
+                                        <div class="space-y-1">
+                                            <h4 class="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-bold">Deployment URL:</h4>
+                                            <a href="https://nicholascaplan.github.io/nick-playground/" target="_blank" rel="noopener noreferrer" class="block font-mono font-bold text-cyber-yellow text-[9px] sm:text-[10px] md:text-[11px] lg:text-[9.5px] xl:text-[11px] tracking-tight hover:underline leading-snug select-text cursor-pointer bg-slate-900/90 p-2 rounded-lg border border-blue-900/60 break-all">
                                                 https://nicholascaplan.github.io/nick-playground/
                                             </a>
                                         </div>
+
+                                        <!-- BoxedCode OpenCode Fork Callout Panel -->
+                                        <div class="p-2.5 rounded-xl bg-blue-950/40 border border-blue-800/40 text-[10px] md:text-[11px] text-slate-300 space-y-0.5 shadow-inner">
+                                            <div class="flex items-center gap-1.5 text-cyber-yellow font-bold font-grotesk tracking-wide uppercase text-[9px]">
+                                                <i class="fa-solid fa-code-fork text-[9px]"></i>
+                                                BoxedCode Integration
+                                            </div>
+                                            <p class="leading-relaxed">
+                                                Our OpenCode fork automated this static pipeline, turning delivery into a swift <strong class="text-white">45-second job</strong>!
+                                            </p>
+                                        </div>
                                     </div>
 
-                                    <div class="pt-4 border-t border-blue-900/30 flex justify-between items-center text-xs text-slate-400 font-mono">
+                                    <div class="pt-2.5 border-t border-blue-900/30 flex justify-between items-center text-[10px] text-slate-400 font-mono">
                                         <span>Protocol: HTTPS Static</span>
                                         <span class="text-cyber-yellow">Continuous Delivery</span>
                                     </div>
@@ -851,20 +934,17 @@
 
         // Jump Directly to any Slide from Timeline Click
         function jumpToSlide(event) {
-            // Prevent this click from bubbling up and triggering a double slide advance
             event.stopPropagation();
 
             const rect = event.currentTarget.getBoundingClientRect();
             const clickX = event.clientX - rect.left;
             const percentage = clickX / rect.width;
 
-            // Map click coordinate accurately to the slide index boundary
             const targetIndex = Math.min(
                 slidesContent.length - 1,
                 Math.max(0, Math.floor(percentage * slidesContent.length))
             );
 
-            // Avoid triggering full transition re-renders if we are already on the clicked slide
             if (targetIndex !== currentSlideIndex) {
                 currentSlideIndex = targetIndex;
                 updateDeckIndicators();
@@ -896,7 +976,7 @@
                 "<strong>Step 3 Context:</strong> The LLM processes dynamic instructions and operational code in a single un-sandboxed memory buffer, causing immediate hijack.",
                 "<strong>Step 4 Context:</strong> Without explicit transaction verification or strict read-only execution boundaries, agent actions will trigger severe database destruction."
             ];
-            explanationBlock.innerHTML = `<i class="fa-solid fa-circle-info text-cyber-yellow mr-2 animate-pulse"></i>` + explanations[stepIdx];
+            explanationBlock.innerHTML = `<i class="fa-solid fa-circle-info text-cyber-yellow mr-2"></i>` + explanations[stepIdx];
         }
 
         // Slide 2 Interactive Tab Control
@@ -911,7 +991,7 @@
             renderSlide(currentSlideIndex, true);
         }
 
-        // Slide 11 Appendix Selector Tab
+        // Slide 13 Appendix Selector Tab
         function selectAppendixTab(sIdx) {
             activeAppendixTab = sIdx;
             renderSlide(currentSlideIndex, true);
@@ -935,7 +1015,6 @@
             }
         }
 
-        // BIND PRESENTATION KEYBOARD INTERACTION
         document.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowRight' || event.key === ' ') {
                 nextSlide();
@@ -944,9 +1023,7 @@
             }
         });
 
-        // BIND INTUITIVE SCREEN CLICK INTERACTION
         document.getElementById('presentation-deck').addEventListener('click', (event) => {
-            // Ignore if clicking on designated interactive targets or the timeline
             if (
                 event.target.closest('.path-step') ||
                 event.target.closest('[onclick^="selectControlLayer"]') ||
@@ -968,7 +1045,6 @@
             }
         });
 
-        // MOBILE SWIPE GESTURE DETECTOR
         let touchStartX = 0;
         let touchEndX = 0;
         const deckElement = document.getElementById('presentation-deck');
