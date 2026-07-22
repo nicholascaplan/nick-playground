@@ -71,21 +71,45 @@
             box-shadow: 0 0 15px rgba(250, 204, 21, 0.2);
             transform: none;
         }
+
+        #presentation-deck:fullscreen {
+            width: 100vw;
+            height: 100vh;
+            max-width: none;
+            border-radius: 0;
+            border-width: 0;
+        }
+
+        #fullscreen-toggle {
+            transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+        }
+
+        #fullscreen-toggle:hover {
+            color: #facc15;
+            border-color: rgba(250, 204, 21, 0.6);
+            background-color: rgba(30, 64, 175, 0.35);
+        }
     </style>
 </head>
-<body class="select-none min-h-screen w-screen flex flex-col justify-center items-center p-4 md:p-6 dotted-bg">
+<body class="select-none min-h-screen w-screen flex flex-col justify-center items-center p-0 dotted-bg">
 
     <!-- BACKGROUND GRAPHICS -->
     <div class="absolute top-12 left-12 w-32 h-32 rounded-full bg-blue-900/15 blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-16 right-16 w-48 h-48 rounded-full bg-amber-500/5 blur-3xl pointer-events-none"></div>
 
     <!-- MAIN SLIDE FRAME -->
-    <div id="presentation-deck" class="w-full max-w-6xl h-[86vh] bg-cyber-dark/95 rounded-2xl border-4 border-cyber-blue p-6 md:p-10 relative flex flex-col justify-between overflow-hidden shadow-2xl z-10 cursor-pointer">
+    <div id="presentation-deck" class="w-screen max-w-none h-screen bg-cyber-dark/95 rounded-none border-0 md:border-4 md:border-cyber-blue md:rounded-2xl p-4 md:p-10 relative flex flex-col justify-between overflow-hidden shadow-2xl z-10 cursor-pointer">
 
         <!-- TOP HEADER -->
-        <div class="flex justify-between items-center border-b border-blue-900/40 pb-3 mb-2 flex-shrink-0">
+        <div class="flex justify-between items-center gap-4 border-b border-blue-900/40 pb-3 mb-2 flex-shrink-0">
             <span id="slide-category-header" class="text-xs tracking-widest font-grotesk text-cyber-yellow font-bold uppercase"></span>
-            <span class="text-xs text-slate-400 font-mono font-bold">Devoxx UK 2026 • EM Cohort Briefing • Presented 22/07/26</span>
+            <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs text-slate-400 font-mono font-bold">Devoxx UK 2026 • EM Cohort Briefing • Presented 22/07/26</span>
+                <button id="fullscreen-toggle" type="button" onclick="toggleFullscreen(event)" class="inline-flex items-center gap-2 rounded-md border border-blue-900/60 bg-slate-950/50 px-2.5 py-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-300" aria-label="Enter fullscreen">
+                    <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                    <span>Fullscreen</span>
+                </button>
+            </div>
         </div>
 
         <!-- DYNAMIC CONTENT BLOCK -->
@@ -1173,6 +1197,27 @@
             renderSlide(currentSlideIndex);
         }
 
+        async function toggleFullscreen(event) {
+            event.stopPropagation();
+
+            if (!document.fullscreenElement) {
+                await document.getElementById('presentation-deck').requestFullscreen();
+            } else {
+                await document.exitFullscreen();
+            }
+        }
+
+        function updateFullscreenButton() {
+            const button = document.getElementById('fullscreen-toggle');
+            if (!button) return;
+
+            const isFullscreen = Boolean(document.fullscreenElement);
+            button.setAttribute('aria-label', isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen');
+            button.innerHTML = isFullscreen
+                ? '<i class="fa-solid fa-compress" aria-hidden="true"></i><span>Exit fullscreen</span>'
+                : '<i class="fa-solid fa-expand" aria-hidden="true"></i><span>Fullscreen</span>';
+        }
+
         function nextSlide() {
             if (currentSlideIndex < slidesContent.length - 1) {
                 currentSlideIndex++;
@@ -1194,6 +1239,8 @@
                 prevSlide();
             }
         });
+
+        document.addEventListener('fullscreenchange', updateFullscreenButton);
 
         document.getElementById('presentation-deck').addEventListener('click', (event) => {
             if (
