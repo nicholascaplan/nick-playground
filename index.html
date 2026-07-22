@@ -82,12 +82,42 @@
 
         #fullscreen-toggle {
             transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+            width: 2.25rem;
+            height: 2.25rem;
+            justify-content: center;
+            padding: 0;
         }
 
         #fullscreen-toggle:hover {
             color: #facc15;
             border-color: rgba(250, 204, 21, 0.6);
             background-color: rgba(30, 64, 175, 0.35);
+        }
+
+        @media (min-width: 1280px) {
+            #slide-container {
+                font-size: 1.08rem;
+            }
+
+            #slide-container h1 {
+                font-size: clamp(2.75rem, 4vw, 5rem);
+            }
+
+            #slide-container h2 {
+                font-size: clamp(2rem, 3vw, 3.5rem);
+            }
+
+            #slide-container h3 {
+                line-height: 1.15;
+            }
+
+            #slide-container p {
+                line-height: 1.55;
+            }
+
+            #slide-container .grid {
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -105,9 +135,8 @@
             <span id="slide-category-header" class="text-xs tracking-widest font-grotesk text-cyber-yellow font-bold uppercase"></span>
             <div class="flex items-center gap-3">
                 <span class="hidden sm:inline text-xs text-slate-400 font-mono font-bold">Devoxx UK 2026 • EM Cohort Briefing • Presented 22/07/26</span>
-                <button id="fullscreen-toggle" type="button" onclick="toggleFullscreen(event)" class="inline-flex items-center gap-2 rounded-md border border-blue-900/60 bg-slate-950/50 px-2.5 py-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-300" aria-label="Enter fullscreen">
+                <button id="fullscreen-toggle" type="button" onclick="toggleFullscreen(event)" class="inline-flex items-center rounded-md border border-blue-900/60 bg-slate-950/50 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-300" aria-label="Enter fullscreen" title="Enter fullscreen">
                     <i class="fa-solid fa-expand" aria-hidden="true"></i>
-                    <span>Fullscreen</span>
                 </button>
             </div>
         </div>
@@ -1213,9 +1242,10 @@
 
             const isFullscreen = Boolean(document.fullscreenElement);
             button.setAttribute('aria-label', isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen');
+            button.title = isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen';
             button.innerHTML = isFullscreen
-                ? '<i class="fa-solid fa-compress" aria-hidden="true"></i><span>Exit fullscreen</span>'
-                : '<i class="fa-solid fa-expand" aria-hidden="true"></i><span>Fullscreen</span>';
+                ? '<i class="fa-solid fa-compress" aria-hidden="true"></i>'
+                : '<i class="fa-solid fa-expand" aria-hidden="true"></i>';
         }
 
         function nextSlide() {
