@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    
     <script>
         tailwind.config = {
             theme: {
@@ -68,7 +68,7 @@
             font-size: var(--slide-small-size);
             line-height: 1.4;
         }
-
+        
         /* Snappier cinematic ease curves (250ms) */
         #slide-container {
             transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -104,20 +104,6 @@
             max-width: none;
             border-radius: 0;
             border-width: 0;
-        }
-
-        #fullscreen-toggle {
-            transition: color 0.2s, border-color 0.2s, background-color 0.2s;
-            width: 2.25rem;
-            height: 2.25rem;
-            justify-content: center;
-            padding: 0;
-        }
-
-        #fullscreen-toggle:hover {
-            color: #facc15;
-            border-color: rgba(250, 204, 21, 0.6);
-            background-color: rgba(30, 64, 175, 0.35);
         }
 
         #mobile-toggle {
@@ -482,9 +468,9 @@
             }
 
             #slide-container .thesis-bullets > div {
-                min-height: 9rem;
+                min-height: 0;
                 height: auto;
-                padding: 1.25rem;
+                padding: 1rem;
                 border: 1px solid rgba(30, 64, 175, 0.55);
                 border-radius: 0.75rem;
                 background: rgba(15, 23, 42, 0.5);
@@ -519,6 +505,23 @@
             #slide-container .future-story-content {
                 justify-content: flex-start;
                 padding-top: 1rem;
+            }
+
+            #slide-container .workflow-slide {
+                justify-content: center;
+                padding-top: 0;
+            }
+
+            #slide-container .appendix-console {
+                height: auto;
+                min-height: 24rem;
+                overflow: visible;
+            }
+
+            #slide-container .workflow-slide .workflow-grid {
+                align-items: start;
+                width: min(100%, 100rem);
+                margin-inline: auto;
             }
 
             #slide-container .experience-slide {
@@ -559,16 +562,12 @@
                 min-height: 4.5rem;
             }
 
-            #slide-container .controls-stack-layout .experience-detail {
-                min-height: 25rem;
-            }
-
             #slide-container .controls-stack-layout {
                 align-items: stretch;
             }
 
             #slide-container .controls-stack-layout > .experience-selector {
-                min-height: 25rem;
+                min-height: 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -757,9 +756,39 @@
                 padding-top: 0.6rem;
             }
 
-            #slide-container .split-shift-slide {
+            #slide-container .workflow-slide {
+                position: relative;
                 justify-content: flex-start;
-                padding-top: 0;
+                padding-top: 4.25rem;
+            }
+
+            #slide-container .appendix-console {
+                min-height: 0;
+                overflow: visible;
+            }
+
+            #slide-container .workflow-slide .workflow-grid {
+                min-height: 0;
+                width: 100%;
+            }
+
+            #slide-container .workflow-grid {
+                min-height: 0;
+            }
+
+            #slide-container .workflow-slide .workflow-tabs {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-bottom: 0;
+            }
+
+            #slide-container .workflow-slide .workflow-grid {
+                width: 100%;
+            }
+
+            #slide-container .split-shift-slide {
+                padding-top: 4.25rem;
                 overflow: hidden;
             }
 
@@ -1095,7 +1124,7 @@
 
     <!-- MAIN SLIDE FRAME -->
     <div id="presentation-deck" class="w-screen max-w-none h-screen bg-cyber-dark/95 rounded-none border-0 md:border-4 md:border-cyber-blue md:rounded-2xl p-4 md:p-10 relative flex flex-col justify-between overflow-hidden shadow-2xl z-10 cursor-pointer">
-
+        
         <!-- TOP HEADER -->
         <div class="flex justify-between items-center gap-4 border-b border-blue-900/40 pb-3 mb-2 flex-shrink-0">
             <span id="slide-category-header" class="text-xs tracking-widest font-grotesk text-cyber-yellow font-bold uppercase"></span>
@@ -1103,9 +1132,6 @@
                 <span class="hidden sm:inline text-xs text-slate-400 font-mono font-bold">Devoxx UK 2026 • EM Cohort Briefing • Presented 22/07/26</span>
                 <button id="mobile-toggle" type="button" onclick="toggleMobilePreview(event)" class="inline-flex items-center rounded-md border border-blue-900/60 bg-slate-950/50 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-300" aria-label="Show mobile preview" title="Show mobile preview">
                     <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
-                </button>
-                <button id="fullscreen-toggle" type="button" onclick="toggleFullscreen(event)" class="inline-flex items-center rounded-md border border-blue-900/60 bg-slate-950/50 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-300" aria-label="Enter fullscreen" title="Enter fullscreen">
-                    <i class="fa-solid fa-expand" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
@@ -1126,16 +1152,16 @@
             <div class="text-left">
                 <span id="slide-footer-left" class="font-mono text-[11px] md:text-xs text-slate-400"></span>
             </div>
-
+            
             <!-- Center Side: Speaker Badge -->
             <div class="flex justify-center items-center gap-3">
-                <img src="https://ca.slack-edge.com/E011GCXCPMY-U05U7AW717C-b1a0ea04cda2-512"
-                     alt="Nick Caplan"
+                <img src="https://ca.slack-edge.com/E011GCXCPMY-U05U7AW717C-b1a0ea04cda2-512" 
+                     alt="Nick Caplan" 
                      class="w-9 h-9 rounded-full border border-cyber-yellow/40 object-cover shadow-md"
                      onerror="this.onerror=null; this.src='https://placehold.co/36x36/1d4ed8/facc15?text=NC'">
                 <span class="text-[10px] md:text-xs text-slate-400 font-mono font-bold tracking-wide">Nick Caplan</span>
             </div>
-
+            
             <!-- Right Side: Clean Slide Number Metric -->
             <div class="text-right">
                 <span id="slide-footer-right" class="font-grotesk text-cyber-yellow font-semibold text-[11px] md:text-xs"></span>
@@ -1414,6 +1440,11 @@
                         title: 'Several ways to navigate',
                         desc: 'You can move through the deck with the keyboard, a touch swipe or the progress bar at the bottom.',
                         advantage: 'These options are supported in the current implementation and should be checked on the presentation device before use.'
+                    },
+                    {
+                        title: 'Generated, then iterated',
+                        desc: 'Google Gemini generated the first version of this slide deck from a structured briefing and presentation requirements.',
+                        advantage: 'I then iterated on the HTML, interaction model and visual system with OpenCode until the deck matched the intended presentation experience.'
                     }
                 ],
                 footerLeft: 'Technical Appendix • Architecture Report'
@@ -1429,12 +1460,12 @@
         ];
 
         let currentSlideIndex = 0;
-        let activeTransitionTimeout = null;
+        let activeTransitionTimeout = null; 
 
         // Active State trackers for dynamic slides
-        let activeFloorInsight = 0;
-        let activeShiftTab = 'async';
-        let activeControlLevel = 0;
+        let activeFloorInsight = 0;   
+        let activeShiftTab = 'async'; 
+        let activeControlLevel = 0;   
         let activeAppendixTab = 0;
         let activeExperienceMoment = 0;
         let activeFutureStory = 'story';
@@ -1442,7 +1473,7 @@
         function renderSlide(index, isInternalUpdate = false) {
             const slide = slidesContent[index];
             const container = document.getElementById('slide-container');
-
+            
             if (isInternalUpdate) {
                 compileAndInject(slide, container, index);
                 return;
@@ -1520,7 +1551,7 @@
                 html += `
                     <div class="flex-grow flex flex-col justify-center py-1 font-jakarta">
                             <div class="mobile-stack grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch" onclick="event.stopPropagation()">
-
+                            
                             <!-- Card 1: Conference Scale -->
                             <div class="devoxx-context-card bg-slate-900/50 border border-blue-900/60 p-5 rounded-xl flex flex-col justify-between">
                                 <div class="space-y-3">
@@ -1626,7 +1657,7 @@
                                          <h4 class="text-[10px] uppercase font-mono tracking-wider text-slate-400">Ground Truth:</h4>
                                          <p class="text-slate-200 text-xs md:text-sm leading-relaxed">${slide.pillars[activeFloorInsight].reality}</p>
                                      </div>
-
+                                     
                                      <div class="space-y-2 pt-4 border-t border-blue-900/30">
                                          <h4 class="text-[10px] uppercase font-mono tracking-wider text-cyber-yellow">Takeaway:</h4>
                                          <p class="text-slate-300 text-xs md:text-sm leading-relaxed border-l-2 border-cyber-yellow pl-2.5">${slide.pillars[activeFloorInsight].parallel}</p>
@@ -1668,12 +1699,12 @@
             } else if (slide.layout === 'future-story') {
                 const isStory = activeFutureStory === 'story';
                 html += `
-                     <div class="future-story-slide flex-grow flex flex-col justify-center py-1">
-                        <div class="flex bg-slate-950/80 p-1.5 rounded-xl border border-blue-900/50 w-fit mb-6" onclick="event.stopPropagation()">
+                     <div class="workflow-slide future-story-slide flex-grow flex flex-col justify-center py-1">
+                         <div class="workflow-tabs flex bg-slate-950/80 p-1.5 rounded-xl border border-blue-900/50 w-fit mb-6" onclick="event.stopPropagation()">
                             <button onclick="setFutureStory('story')" class="px-5 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-200 ${isStory ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'}">The Story</button>
                             <button onclick="setFutureStory('application')" class="px-5 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-200 ${!isStory ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'}">The EM Application</button>
                         </div>
-                        <div class="future-story-grid grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+                         <div class="workflow-grid future-story-grid grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
                             <div class="future-story-panel md:col-span-8 bg-slate-900/50 p-6 rounded-xl border border-blue-900/50">
                                 ${isStory ? `
                                     <span class="text-[10px] font-mono text-cyber-yellow uppercase tracking-widest">Doom is not a destination</span>
@@ -1702,7 +1733,7 @@
                 html += `
                      <div class="split-shift-slide future-story-content flex-grow flex flex-col justify-center py-2">
                         <!-- Premium Segmented Control -->
-                        <div class="split-shift-tabs flex bg-slate-950/80 p-1.5 rounded-xl border border-blue-900/50 w-fit mb-6" onclick="event.stopPropagation()">
+                         <div class="workflow-tabs split-shift-tabs flex bg-slate-950/80 p-1.5 rounded-xl border border-blue-900/50 w-fit mb-6" onclick="event.stopPropagation()">
                             <button onclick="setShiftTab('async')" class="px-5 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-200 ${activeShiftTab === 'async' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'}">
                                 Long-Lived Branches
                             </button>
@@ -1711,7 +1742,7 @@
                             </button>
                         </div>
 
-                        <div class="split-shift-grid grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                         <div class="workflow-grid split-shift-grid grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                             ${activeShiftTab === 'async' ? `
                                 <div class="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-blue-900/50 flex flex-col justify-between h-full min-h-[220px]">
                                     <div>
@@ -1771,8 +1802,8 @@
                 `;
             } else if (slide.layout === 'two-column-qualification') {
                 html += `
-                    <div class="flex-grow flex flex-col justify-center py-2">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="workflow-slide flex-grow flex flex-col justify-center py-2">
+                        <div class="workflow-grid grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-blue-900/50 space-y-2">
                                 <h3 class="text-cyber-yellow font-bold text-sm md:text-base font-grotesk uppercase tracking-wider mb-2">${slide.col1Title}</h3>
                                 <p class="text-slate-300 text-xs md:text-sm leading-relaxed">${slide.col1Text}</p>
@@ -1786,8 +1817,8 @@
                 `;
             } else if (slide.layout === 'split-threat') {
                 html += `
-                    <div class="flex-grow flex flex-col justify-center py-2">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                    <div class="workflow-slide flex-grow flex flex-col justify-center py-2">
+                        <div class="workflow-grid grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-blue-900/50 flex flex-col justify-between">
                                 <div>
                                     <h3 class="text-cyber-yellow font-bold text-sm md:text-base mb-3 font-grotesk uppercase tracking-wider">${slide.col1Title}</h3>
@@ -1851,7 +1882,7 @@
                                 <div class="bg-slate-900/50 border border-blue-900/50 rounded-2xl p-6 flex flex-col justify-between min-h-[220px]">
                                     <div>
                                         <span class="text-cyber-yellow text-xs font-mono font-bold">0${primitiveIdx + 1}</span>
-                                        <h3 class="text-white text-2xl font-bold font-grotesk mt-3 mb-4">${primitive.name}</h3>
+                                         <h3 class="text-cyber-yellow text-2xl font-bold font-grotesk mt-3 mb-4">${primitive.name}</h3>
                                         <p class="text-slate-300 text-sm md:text-base leading-relaxed">${primitive.text}</p>
                                     </div>
                                     <div class="pt-4 mt-5 border-t border-blue-900/30 text-[10px] font-mono text-slate-500 uppercase tracking-wider">
@@ -1887,7 +1918,6 @@
                                 ${slide.layers.map((layer, lIdx) => `
                                     <div id="control-layer-${lIdx}" onclick="selectControlLayer(${lIdx})" class="experience-option group cursor-pointer transition-all duration-200 bg-gradient-to-r ${activeControlLevel === lIdx ? 'from-blue-900/70 to-slate-900/80 border-l-4 border-cyber-yellow ring-1 ring-blue-500/30' : 'from-blue-950/30 to-slate-900/50 border-l-4 border-transparent hover:border-blue-500/40'} p-3.5 rounded-r-xl flex items-center justify-between gap-2">
                                         <div>
-                                            <h4 class="text-xs font-mono text-slate-400 uppercase tracking-widest">LAYER 0${lIdx + 1}</h4>
                                             <h3 class="${activeControlLevel === lIdx ? 'text-cyber-yellow' : 'text-slate-300 group-hover:text-white'} font-bold text-sm md:text-base font-grotesk tracking-wide">${layer.level}</h3>
                                         </div>
                                         <i class="fa-solid fa-chevron-right text-xs transition-transform ${activeControlLevel === lIdx ? 'text-cyber-yellow translate-x-1' : 'text-slate-600'}"></i>
@@ -1972,8 +2002,7 @@
                                 ${slide.systems.map((system, sIdx) => `
                                     <div id="appendix-system-${sIdx}" onclick="selectAppendixTab(${sIdx})" class="group cursor-pointer transition-all duration-200 bg-gradient-to-r ${activeAppendixTab === sIdx ? 'from-blue-900/70 to-slate-900/80 border-l-4 border-cyber-yellow ring-1 ring-blue-500/30' : 'from-blue-950/30 to-slate-900/50 border-l-4 border-transparent hover:border-blue-500/40'} p-3.5 rounded-r-xl flex items-center justify-between gap-2">
                                         <div>
-                                            <h4 class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">DECK SUBSYSTEM 0${sIdx + 1}</h4>
-                                            <h3 class="${activeAppendixTab === sIdx ? 'text-cyber-yellow' : 'text-slate-300 group-hover:text-white'} font-bold text-sm md:text-base font-grotesk tracking-wide">${system.title}</h3>
+                                             <h3 class="${activeAppendixTab === sIdx ? 'text-cyber-yellow' : 'text-slate-300 group-hover:text-white'} font-bold text-sm md:text-base font-grotesk tracking-wide">${system.title}</h3>
                                         </div>
                                         <i class="fa-solid fa-chevron-right text-xs transition-transform ${activeAppendixTab === sIdx ? 'text-cyber-yellow translate-x-1' : 'text-slate-600'}"></i>
                                     </div>
@@ -1981,19 +2010,16 @@
                             </div>
 
                             <!-- Right Column: Interactive Console -->
-                            <div class="lg:col-span-6 bg-slate-950/60 border border-blue-900 p-5 rounded-2xl flex flex-col justify-between shadow-2xl font-mono h-[290px] overflow-hidden">
-                                <div class="space-y-4">
-                                    <div class="flex items-center justify-between border-b border-blue-900/40 pb-3">
-                                        <span class="inline-flex items-center gap-1.5 text-xs font-bold text-green-400 bg-green-950/40 border border-green-500/20 px-2.5 py-1 rounded-md">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
-                                            Deck Performance Stats
-                                        </span>
-                                        <div class="text-[10px] text-slate-400">
-                                            Source: <span class="text-cyber-yellow font-bold">~75KB</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="space-y-3">
+                             <div class="appendix-console lg:col-span-6 bg-slate-950/60 border border-blue-900 p-5 rounded-2xl flex flex-col justify-between shadow-2xl font-mono">
+                                 <div class="space-y-4">
+                                     ${activeAppendixTab === 3 ? `
+                                         <div class="flex items-center gap-4 border-b border-blue-900/40 pb-3">
+                                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/3840px-Google_Gemini_icon_2025.svg.png" alt="Google Gemini" class="w-9 h-9 object-contain">
+                                             <span class="text-slate-500 font-bold">+</span>
+                                             <img src="https://opencode.ai/_build/assets/preview-opencode-wordmark-simple-light-JrIbT-1j.png" alt="OpenCode" class="w-28 h-8 object-contain object-left">
+                                         </div>
+                                     ` : ''}
+                                     <div class="space-y-3">
                                         <h4 class="text-xs uppercase font-sans tracking-wider text-slate-400 font-bold">Subsystem Scope:</h4>
                                         <p class="text-slate-200 text-xs md:text-sm leading-relaxed font-sans">${slide.systems[activeAppendixTab].desc}</p>
                                     </div>
@@ -2004,9 +2030,8 @@
                                     </div>
                                 </div>
 
-                                <div class="pt-4 border-t border-blue-900/30 flex justify-between items-center text-[10px] text-slate-500">
-                                    <span>Render latency: <span class="text-slate-400 font-bold">Not instrumented</span></span>
-                                    <span>Framework-Free: <span class="text-cyber-yellow font-bold">Vanilla JS</span></span>
+                                 <div class="pt-3 border-t border-blue-900/30 flex justify-end items-center text-[10px] text-slate-500">
+                                         <span class="text-cyber-yellow font-bold">Vanilla JS</span>
                                 </div>
                             </div>
                         </div>
@@ -2018,7 +2043,7 @@
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                             <!-- Left Column: Inline Connected vertical nodes -->
                             <div class="lg:col-span-7 flex flex-col justify-between h-full space-y-1">
-
+                                
                                 <!-- Step 1 -->
                                 <div class="bg-slate-950/40 border border-blue-900/60 rounded-xl p-3 flex items-start gap-3 relative">
                                     <span class="w-6 h-6 rounded bg-cyber-yellow/10 border border-cyber-yellow text-cyber-yellow font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-grotesk">1</span>
@@ -2074,14 +2099,14 @@
                                             </span>
                                             <span class="text-[10px] text-slate-400 font-mono uppercase">SSL Active</span>
                                         </div>
-
+                                        
                                         <div class="space-y-1">
                                             <h4 class="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-bold">Deployment URL:</h4>
                                             <a href="https://nicholascaplan.github.io/nick-playground/" target="_blank" rel="noopener noreferrer" class="block font-mono font-bold text-cyber-yellow text-[9px] sm:text-[10px] md:text-[11px] lg:text-[9.5px] xl:text-[11px] tracking-tight hover:underline leading-snug select-text cursor-pointer bg-slate-900/90 p-2 rounded-lg border border-blue-900/60 break-all">
                                                 https://nicholascaplan.github.io/nick-playground/
                                             </a>
                                         </div>
-
+                                        
                                         <!-- BoxedCode OpenCode Fork Callout Panel -->
                                         <div class="p-2.5 rounded-xl bg-blue-950/40 border border-blue-800/40 text-[10px] md:text-[11px] text-slate-300 space-y-0.5 shadow-inner">
                                             <div class="flex items-center gap-1.5 text-cyber-yellow font-bold font-grotesk tracking-wide uppercase text-[9px]">
@@ -2093,7 +2118,7 @@
                                             </p>
                                         </div>
                                     </div>
-
+                                    
                                     <div class="pt-2.5 border-t border-blue-900/30 flex justify-between items-center text-[10px] text-slate-400 font-mono">
                                         <span>Protocol: HTTPS Static</span>
                                         <span class="text-cyber-yellow">Continuous Delivery</span>
@@ -2115,9 +2140,9 @@
             const rect = event.currentTarget.getBoundingClientRect();
             const clickX = event.clientX - rect.left;
             const percentage = clickX / rect.width;
-
+            
             const targetIndex = Math.min(
-                slidesContent.length - 1,
+                slidesContent.length - 1, 
                 Math.max(0, Math.floor(percentage * slidesContent.length))
             );
 
@@ -2148,7 +2173,7 @@
         // Action Path Highlight Action (Slide 5)
         function highlightStep(event, stepIdx) {
             event.stopPropagation();
-
+            
             document.querySelectorAll('.path-step').forEach((el, index) => {
                 if (index === stepIdx) {
                     el.classList.add('active');
@@ -2156,7 +2181,7 @@
                     el.classList.remove('active');
                 }
             });
-
+            
             const explanationBlock = document.getElementById('attack-diagram-explanation');
             const explanations = [
                 "<strong>Control point:</strong> Classify external content as untrusted before it reaches the model, and preserve its source and provenance for the policy layer.",
@@ -2189,16 +2214,6 @@
             renderSlide(currentSlideIndex);
         }
 
-        async function toggleFullscreen(event) {
-            event.stopPropagation();
-
-            if (!document.fullscreenElement) {
-                await document.getElementById('presentation-deck').requestFullscreen();
-            } else {
-                await document.exitFullscreen();
-            }
-        }
-
         function toggleMobilePreview(event) {
             event.stopPropagation();
             document.body.classList.toggle('mobile-preview');
@@ -2218,18 +2233,6 @@
             button.classList.remove('active');
             button.setAttribute('aria-label', 'Show mobile preview');
             button.title = 'Show mobile preview';
-        }
-
-        function updateFullscreenButton() {
-            const button = document.getElementById('fullscreen-toggle');
-            if (!button) return;
-
-            const isFullscreen = Boolean(document.fullscreenElement);
-            button.setAttribute('aria-label', isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen');
-            button.title = isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen';
-            button.innerHTML = isFullscreen
-                ? '<i class="fa-solid fa-compress" aria-hidden="true"></i>'
-                : '<i class="fa-solid fa-expand" aria-hidden="true"></i>';
         }
 
         function nextSlide() {
@@ -2254,13 +2257,11 @@
             }
         });
 
-        document.addEventListener('fullscreenchange', updateFullscreenButton);
-
         document.getElementById('presentation-deck').addEventListener('click', (event) => {
             if (
-                event.target.closest('.path-step') ||
-                event.target.closest('[onclick^="selectControlLayer"]') ||
-                event.target.closest('[onclick^="setShiftTab"]') ||
+                event.target.closest('.path-step') || 
+                event.target.closest('[onclick^="selectControlLayer"]') || 
+                event.target.closest('[onclick^="setShiftTab"]') || 
                 event.target.closest('[onclick^="selectFloorInsight"]') ||
                 event.target.closest('[onclick^="selectExperienceMoment"]') ||
                 event.target.closest('[onclick^="setFutureStory"]') ||
@@ -2272,7 +2273,7 @@
 
             const rect = event.currentTarget.getBoundingClientRect();
             const relativeX = event.clientX - rect.left;
-
+            
             if (relativeX < rect.width * 0.15) {
                 prevSlide();
             } else {
@@ -2294,12 +2295,12 @@
         }, { passive: true });
 
         function handleSwipeGesture() {
-            const threshold = 50;
+            const threshold = 50; 
 
             if (touchEndX < touchStartX - threshold) {
-                nextSlide();
+                nextSlide(); 
             } else if (touchEndX > touchStartX + threshold) {
-                prevSlide();
+                prevSlide(); 
             }
         }
 
